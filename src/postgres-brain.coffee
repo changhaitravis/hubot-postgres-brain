@@ -15,7 +15,7 @@
 #
 #   CREATE TABLE hubot (
 #     id CHARACTER VARYING(1024) NOT NULL,
-#     storage JSONB,
+#     storage JSON,
 #     CONSTRAINT hubot_pkey PRIMARY KEY (id)
 #   )
 #   INSERT INTO hubot VALUES(1, NULL)
@@ -24,7 +24,7 @@
 # https://github.com/github/hubot-scripts/blob/master/src/scripts/pg-brain.coffee
 # Original Author:
 #   danthompson
-# Modified for storage JSONB instead of storage TEXT By:
+# Modified for storage JSON instead of storage TEXT By:
 #   Travis Juntara
 
 Postgres = require 'pg'
@@ -37,7 +37,7 @@ module.exports = (robot) ->
   save_interval = process.env.HUBOT_BRAIN_SAVE_INTERVAL || 15 * 60 #Default Every 15 Minutes
 
   if !database_url?
-    throw new Error('pg-brain requires a DATABASE_URL to be set.')
+    throw new Error('postgres-brain requires a DATABASE_URL to be set.')
     
   save_interval = parseInt(save_interval)
   if isNaN(save_interval)
