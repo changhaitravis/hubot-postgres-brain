@@ -1,7 +1,7 @@
 {
   "name": "hubot-postgres-brain",
   "description": "Hubot brain persisted to PostgresDB as JSONB",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Travis Juntara <changhaitravis@gmail.com>",
   "license": "MIT",
 
