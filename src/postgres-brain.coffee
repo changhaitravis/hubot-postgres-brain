@@ -31,9 +31,8 @@
 
 Postgres = require 'pg'
 
-if(process.env.DATABASE_SSL){
-    Postgres.defaults.ssl = true
-}
+if process.env.DATABASE_SSL
+  Postgres.defaults.ssl = true
 
 # sets up hooks to persist the brain into postgres.
 module.exports = (robot) ->
